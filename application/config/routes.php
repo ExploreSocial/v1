@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['login'] = 'welcome/login';
+$route['signup'] = 'welcome/signup';
+
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
