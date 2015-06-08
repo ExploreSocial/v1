@@ -19,7 +19,7 @@ class Login extends CI_Controller {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{ 
+	{ echo "hi"
 		$this->load->view('login');
 	}
 }

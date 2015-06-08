@@ -24,12 +24,17 @@ class Welcome extends CI_Controller {
 	}
 	public function login()
 	{
+
 		$data=array('action' => 'login');
 		$this->load->view('signup_login',$data);
 	}
 	public function signup()
-	{
-		$data=array('action' => 'signup');
-		$this->load->view('signup_login',$data);
+	{	
+		if(isset($_POST['signup_now'])){ 
+			print_r($_POST); DIE;
+		}else{
+			$data=array('action' => 'signup');
+			$this->load->view('signup_login',$data);
+		}
 	}
 }

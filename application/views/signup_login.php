@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Material Admin</title>
+        <title>Explore Social</title>
         
         <!-- Vendor CSS -->
         <link href="vendors/animate-css/animate.min.css" rel="stylesheet">
@@ -15,6 +15,8 @@
         <!-- CSS -->
         <link href="css/app.min.1.css" rel="stylesheet">
         <link href="css/app.min.2.css" rel="stylesheet">
+
+
     </head>
     
     <body class="login-content">
@@ -54,33 +56,40 @@
         
         <!-- Register -->
         <div class="lc-block" id="l-register">
-            <div class="input-group m-b-20">
+          <form id="signup" method="post" action="#">  
+            
+            <div class="alert alert-danger hide" role="alert" id="signup-errors"></div>
+            
+            <div class="input-group m-b-20" id="input-username">
                 <span class="input-group-addon"><i class="md md-person"></i></span>
                 <div class="fg-line">
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Username">
                 </div>
             </div>
             
-            <div class="input-group m-b-20">
+            <div class="input-group m-b-20" id="input-email">
                 <span class="input-group-addon"><i class="md md-mail"></i></span>
                 <div class="fg-line">
-                    <input type="text" class="form-control" placeholder="Email Address">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email Address">
                 </div>
             </div>
             
-            <div class="input-group m-b-20">
+            <div class="input-group m-b-20" id="input-pass">
                 <span class="input-group-addon"><i class="md md-accessibility"></i></span>
                 <div class="fg-line">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" id="pass" name="pass" class="form-control" placeholder="Password">
                 </div>
             </div>
             
-              <div class="input-group m-b-20">
+              <div class="input-group m-b-20" id="input-repass">
                 <span class="input-group-addon"><i class="md md-accessibility"></i></span>
                 <div class="fg-line">
-                    <input type="password" class="form-control" placeholder="Re-enter Password">
+                    <input type="password" id="re-pass" class="form-control" placeholder="Confirm Password">
+
                 </div>
+                
             </div>
+            
 
             <div class="clearfix"></div>
             
@@ -91,9 +100,9 @@
                     Accept the license agreement
                 </label>
             </div>
-            
-            <a href="" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
-            
+            <input type="hidden" name="signup_now" value="1" >
+            <a href="" class="btn btn-login btn-danger btn-float" id="signup_submit"><i class="md md-arrow-forward"></i></a>
+        </form>
             <ul class="login-navigation">
                 <li data-block="#l-login" class="bgm-green">Login</li>
                 <li data-block="#l-forget-password" class="bgm-orange">Forgot Password?</li>
@@ -165,8 +174,8 @@
         <script src="js/bootstrap.min.js"></script>
         
         <script src="vendors/waves/waves.min.js"></script>
-        
         <script src="js/functions.js"></script>
+        <script src="js/esocial/signup_login.js"></script>
         
     </body>
 </html>
