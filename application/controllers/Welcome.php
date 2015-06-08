@@ -29,9 +29,14 @@ class Welcome extends CI_Controller {
 		$this->load->view('signup_login',$data);
 	}
 	public function signup()
-	{	
+	{	$this->load->model('welcome_model','welcome');
 		if(isset($_POST['signup_now'])){ 
-			print_r($_POST); DIE;
+			if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['pass'])){
+				return flase;
+			}else{
+				$result = $this->welcome->user_signup($_POST);
+				return $result;
+			}
 		}else{
 			$data=array('action' => 'signup');
 			$this->load->view('signup_login',$data);
