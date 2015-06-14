@@ -15,7 +15,15 @@ $(document).ready(function(){
                             url: "signup/",
                             data: signup_data,
                             success: function(msg) {
-                                     
+                                if(msg == 0){
+                                     $("#signup-errors").html("All fields are mandatory!");
+                                     $("#signup-errors").removeClass("hide").addClass("show");
+                                }else if(msg == 2){
+                                      $("#signup-errors").html("Email already registered! Click <a href='forgot-password'>Forgot password</a> to generate a new password..");
+                                      $("#signup-errors").removeClass("hide").addClass("show");
+                                }else{
+                                    //redirect the user to dashboard
+                                }
                             },
                             error: function(xhr, status) {
                                 alert("There was some issue signing up! Please try again after some time.");
@@ -26,9 +34,42 @@ $(document).ready(function(){
         });
         
     });
+
+
+    $("#login_submit").click(function(e){  
+
+        e.preventDefault();  
+        var validate = $.when(validate_login());
+        validate.done(function(data){
+                if(data){ 
+                return false;
+            }else{ 
+                var login_data = $('#login').serialize();
+
+                $.ajax({
+                            type: "POST",
+                            url: "login/",
+                            data: login_data,
+                            success: function(msg) {
+                                if(msg == 0){
+                                     $("#login-errors").html("All fields are mandatory!");
+                                     $("#login-errors").removeClass("hide").addClass("show");
+                                }else{
+                                    //redirect the user to dashboard
+                                }
+                            },
+                            error: function(xhr, status) {
+                                alert("There was some issue logging in! Please try again after some time.");
+                                return false;
+                            }
+                        });
+             }   
+        });
+        
+    });
 });
 
-var validate_signup = function() {
+var validate_signup = function() { alert("singup");
     var error=0;
     var error_report='';
     $("#signup-errors").html();
@@ -70,6 +111,14 @@ var validate_signup = function() {
         $("#input-repass").removeClass("has-error");
         $("#input-pass").removeClass("has-error");
     }
+
+    if(!$('#agreement').is(':checked')){
+        error=1;
+        error_report += "Please accept the license agreement";
+        $("#accept-agreement").addClass('has-error');
+    }else{
+        $("#accept-agreement").removeClass('has-error');
+    }
     if(error){
         $("#signup-errors").html(error_report);
         $("#signup-errors").removeClass("hide").addClass("show");
@@ -79,8 +128,35 @@ var validate_signup = function() {
 
 }
 
-var validate_login = function(x,y) {
-     return (x * y);
+var validate_login = function() {
+    var error=0;
+    var error_report='';
+    $("#login-errors").html();
+    if(!$("#login_email").val()){
+        error=1;
+        error_report += "Please enter email address <br>";
+        $("#inputlogin-email").addClass("has-error");
+    }else if(validateEmail($("#login_email").val()) == false){
+        error=1;
+        error_report += "Please enter correct email address <br>";
+        $("#inputlogin-email").addClass("has-error");
+    }else{
+        $("#inputlogin-email").removeClass("has-error");
+    }
+
+    if(!$("#login_pass").val()){
+        error=1;
+        error_report += "Please enter password <br>";
+        $("#inputlogin-pass").addClass("has-error");
+    }else{
+        $("#inputlogin-pass").removeClass("has-error");
+    }
+     if(error){
+        $("#login-errors").html(error_report);
+        $("#login-errors").removeClass("hide").addClass("show");
+    }
+
+    return error;
 }
 
 function validateEmail(email){

@@ -24,22 +24,35 @@ class Welcome extends CI_Controller {
 	}
 	public function login()
 	{
-
-		$data=array('action' => 'login');
-		$this->load->view('signup_login',$data);
+		$this->load->model('welcome_model','login');
+		
+		if(isset($_POST['login_now'])){ 
+			if(empty($_POST['email']) || empty($_POST['pass'])){
+				echo 0;
+			}else{
+				$result = $this->welcome->user_login($_POST);
+				echo $result;
+			}
+		}else{
+			$data=array('action' => 'login');
+			$this->load->view('signup_login',$data);
+		}
 	}
 	public function signup()
-	{	$this->load->model('welcome_model','welcome');
+	{	
+		$this->load->model('welcome_model','welcome');
 		if(isset($_POST['signup_now'])){ 
 			if(empty($_POST['username']) || empty($_POST['email']) || empty($_POST['pass'])){
-				return flase;
+				echo 0;
 			}else{
 				$result = $this->welcome->user_signup($_POST);
-				return $result;
+				echo $result;
 			}
 		}else{
 			$data=array('action' => 'signup');
 			$this->load->view('signup_login',$data);
 		}
 	}
+
+	
 }
