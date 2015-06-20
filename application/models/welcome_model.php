@@ -22,11 +22,12 @@ class Welcome_model extends CI_Model {
 	        if ($query->num_rows() > 0)
 			{
 				// return 2 if email already exist
-				return 2;
+				return 'already_exist';
 
 			}else{
 				$this->db->insert('users', $signup_data);
-                return 1;
+				$userid = $this->db->insert_id();
+                return $userid;
             }
         }
 
@@ -37,9 +38,15 @@ class Welcome_model extends CI_Model {
 		        'email' => $data['email'],
 		        'pass' => password_hash($data['pass'], PASSWORD_DEFAULT)
 			);
+	        $sql = "SELECT * FROM users WHERE email = ? AND pass = ? ";
+			$query = $this->db->query($sql, array($signup_data['email'], $signup_data['pass']));
 
-			$this->db->insert('users', $signup_data);
-                echo "in model"; print_r($data); die;
-        }
+	        if ($query->num_rows() > 0)
+			{
+        		$userid = $this->db->insert_id();
+                return $userid;
+        	}else{
+        		return 0;
+        	}
 
     }

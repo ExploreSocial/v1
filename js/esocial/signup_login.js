@@ -18,7 +18,7 @@ $(document).ready(function(){
                                 if(msg == 0){
                                      $("#signup-errors").html("All fields are mandatory!");
                                      $("#signup-errors").removeClass("hide").addClass("show");
-                                }else if(msg == 2){
+                                }else if(msg == 'already_exist'){
                                       $("#signup-errors").html("Email already registered! Click <a href='forgot-password'>Forgot password</a> to generate a new password..");
                                       $("#signup-errors").removeClass("hide").addClass("show");
                                 }else{
