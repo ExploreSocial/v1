@@ -9,6 +9,10 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
 }
 
+html, body {
+    min-height: 100%;
+}
+
 html {
     overflow-x: ~"hidden\0/";
     -ms-overflow-style: none;
@@ -20,8 +24,8 @@ body {
     .animated(fadeIn, 1000ms);
 }
 
-audio, video { 
-  outline: none;
+audio, video {  
+      outline: none;
 }
 
 p {
@@ -76,7 +80,7 @@ body {
     #content {
         padding: 30px 0;
     }
-    
+     
     &.sw-toggled {
         #content {
             @media (min-width: @screen-lg-min) {

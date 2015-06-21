@@ -18,6 +18,16 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	function __construct() {
+
+        parent::__construct();
+        
+        $this->load->helper('url');
+        $this->load->library('session');
+  
+    }
+
 	public function index()
 	{
 		$this->load->view('welcome_message');
@@ -31,6 +41,10 @@ class Welcome extends CI_Controller {
 				echo 0;
 			}else{
 				$result = $this->welcome->user_login($_POST);
+				if(is_numeric($result) && $result > 0)
+				{
+					$this->session->set_userdata('userid',$result);
+				}
 				echo $result;
 			}
 		}else{
@@ -46,12 +60,23 @@ class Welcome extends CI_Controller {
 				echo 0;
 			}else{
 				$result = $this->welcome->user_signup($_POST);
+				if($result != "already_exist" && is_numeric($result) && $result > 0)
+				{
+					$this->session->set_userdata('userid',$result);
+				}
 				echo $result;
 			}
 		}else{
 			$data=array('action' => 'signup');
 			$this->load->view('signup_login',$data);
 		}
+	}
+
+	public function dashboard(){
+		// $this->load->model('dash_model','dash');
+		// check if the user is logged in. If yes then redirected to the dashboard else back to login page!
+		$data = array();
+		$this->load->view('dashboard',$data);
 	}
 
 	

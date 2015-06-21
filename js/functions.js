@@ -16,7 +16,6 @@
             setTimeout(function(){
                 $('body').addClass('toggled sw-toggled');
                 localStorage.setItem('ma-layout-status', 1);
-                animateMainmenu(0, 100);
             }, 250);
         }
         else {
@@ -330,7 +329,7 @@ $(document).ready(function(){
      * Auto Hight Textarea
      */
     if ($('.auto-size')[0]) {
-	   $('.auto-size').autosize();
+	   autosize($('.auto-size'));
     }
     
     /*
@@ -431,13 +430,6 @@ $(document).ready(function(){
      */
     if($('audio, video')[0]) {
         $('video,audio').mediaelementplayer();
-    }
-    
-    /*
-     * Custom Select
-     */
-    if ($('.selectpickers')[0]) {
-        $('.selecstpicker').selectpicker();
     }
     
     /*
@@ -580,6 +572,8 @@ $(document).ready(function(){
     if ($('.form-wizard-basic')[0]) {
     	$('.form-wizard-basic').bootstrapWizard({
     	    tabClass: 'fw-nav',
+            'nextSelector': '.next', 
+            'previousSelector': '.previous'
     	});
     }
     
@@ -614,7 +608,8 @@ $(document).ready(function(){
      * Waves Animation
      */
     (function(){
-        Waves.attach('.btn', ['waves-button', 'waves-float']);
+         Waves.attach('.btn:not(.btn-icon)');
+         Waves.attach('.btn-icon', ['waves-circle', 'waves-float']);
         Waves.init();
     })();
     

@@ -87,6 +87,11 @@
                 color: #fff;
             }
             
+            &.highlighted {
+                background: #eee;
+                color: #333;
+            }
+            
             &.group-result {
                 padding: 3px 16px;
                 margin-top: 10px;
@@ -110,25 +115,6 @@
         .search-field {
             input[type=text] {
                 height: 34px;
-            }
-        }
-        
-        .search-choice {
-            border: 0;
-            padding: 5px 25px 5px 7px;
-            border-radius: 2px;
-            margin: 3px 5px 1px 0;
-             
-            .search-choice-close {
-                right: 5px;
-                
-                &:before {
-                    font-family: 'Material Design Iconic Font';
-                    content: "\f29a";
-                    font-size: 13px;
-                    color: #696969;
-                    margin-right: 8px;
-                }
             }
         }
         
@@ -165,6 +151,15 @@
         border-left: 0;
         border-top: 0;
         border-right: 0;
+        border-radius: 0;
+        background: transparent;
+        border-bottom: 1px solid @input-border;
+        box-shadow: none;
+        height: 28px;
+        
+        div b {
+            background: none;
+        }
     }
     
     .chosen-search {
@@ -194,11 +189,58 @@
 .chosen-container-active {
     &.chosen-with-drop {
         .chosen-single {
-            border: 0;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-color: @input-border;
+            background: none;
         }
     }
     
     &:after {
         width: 100%;
     }
+    
+    .chosen-choices {
+        box-shadow: none;
+    }
+}
+
+.chosen-container-multi { 
+    .chosen-choices  {
+        border: 0;
+        border-bottom: 1px solid @input-border;
+        background: none;
+        padding: 0;
+        
+        li.search-choice {
+            border: 0;
+            padding: 6px 25px 5px 7px;
+            border-radius: 2px;
+            margin: 0 5px 5px 0;
+            background: #eee;
+            border-radius: 2px;
+            box-shadow: none;
+             
+            .search-choice-close {
+                right: 7px;
+                top: 6px;
+                background: none;
+                
+                
+                &:before {
+                    font-family: 'Material Design Iconic Font';
+                    content: "\f29a";
+                    font-size: 13px;
+                    color: #696969;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+
+}
+
+.chosen-search input[type=text] {
+    background: none !important; 
 }

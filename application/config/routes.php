@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['login'] = 'welcome/login';
 $route['signup'] = 'welcome/signup';
-
+$route['dashboard'] = 'welcome/dashboard';
+$route['create/events'] = 'events/setup_events';
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
