@@ -25,6 +25,9 @@ class Events extends CI_Controller {
         
         $this->load->helper('url');
         $this->load->library('session');
+        if(!$this->session->userdata('userid')){
+			header("Location: " . base_url()."login");
+		}
        //  print_r($this->uri->segment_array());
        // echo $this->uri->segment(1); die;
   

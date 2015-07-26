@@ -1,26 +1,9 @@
-<!DOCTYPE html> <?php echo arg(0); die; ?> 
-    <!--[if IE 9 ]><html class="ie9"><![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ESocial Admin</title>
-    
-        <!-- Vendor CSS -->
-        <link href="<?= base_url() ?>vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
-        <link href="<?= base_url() ?>vendors/bower_components/sweetalert/dist/sweetalert-override.min.css" rel="stylesheet">
-        <link href="<?= base_url() ?>vendors/bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet">
-        <link href="<?= base_url() ?>vendors/socicon/socicon.min.css" rel="stylesheet">
-            
-        <!-- CSS -->
-        <link href="<?= base_url() ?>css/app.min.1.css" rel="stylesheet">
-        <link href="<?= base_url() ?>css/app.min.2.css" rel="stylesheet">
-    </head>
+  <?php $this->load->view("admin_header"); ?>
     
     <body>
         <header id="header">
             <ul class="header-inner">
-                <li id="menu-trigger" data-trigger="#sidebar"> 
+                <li id="menu-trigger" data-trigger="#sidebar">
                     <div class="line-wrap">
                         <div class="line top"></div>
                         <div class="line center"></div>
@@ -29,7 +12,7 @@
                 </li>
             
                 <li class="logo hidden-xs">
-                    <a href="index.html">ESocial Admin</a>
+                    <a href="index.html">Material Admin</a>
                 </li>
                 
                 <li class="pull-right">
@@ -313,16 +296,8 @@
                         </div>
                 
                         <ul class="main-menu">
-                            <li><a href="dashboard"><i class="md md-home"></i> Dashboard</a></li>
-                            <li class="sub-menu active toggled">
-                                <a href=""><i class="md md-now-widgets"></i> Events</a>
-
-                                <ul >
-                                    <li><a href="create/events">Create</a></li>
-                                    <li><a href="widgets.html">Manage</a></li>
-                                </ul>
-                            </li>
-                            <!-- <li class="active"><a href="typography.html"><i class="md md-format-underline"></i> Typography</a></li>
+                            <li><a href="index.html"><i class="md md-home"></i> Home</a></li>
+                            <li><a href="typography.html"><i class="md md-format-underline"></i> Typography</a></li>
                             <li class="sub-menu">
                                 <a href=""><i class="md md-now-widgets"></i> Widgets</a>
 
@@ -339,20 +314,20 @@
                                     <li><a href="data-tables.html">Data Tables</a></li>
                                 </ul>
                             </li>
-                            <li class="sub-menu">
+                            <li class="sub-menu active toggled">
                                 <a href=""><i class="md md-my-library-books"></i> Forms</a>
                 
                                 <ul>
                                     <li><a href="form-elements.html">Basic Form Elements</a></li>
                                     <li><a href="form-components.html">Form Components</a></li>
-                                    <li><a href="form-examples.html">Form Examples</a></li>
+                                    <li><a class="active" href="form-examples.html">Form Examples</a></li>
                                     <li><a href="form-validations.html">Form Validation</a></li>
                                 </ul>
                             </li>
                             <li class="sub-menu">
                                 <a href=""><i class="md md-swap-calls"></i>User Interface</a>
                                 <ul>
-                                    <li><a href="colors.html">Colors</a></li>
+                                    <li><a class="active" href="colors.html">Colors</a></li>
                                     <li><a href="animations.html">Animations</a></li>
                                     <li><a href="box-shadow.html">Box Shadow</a></li>
                                     <li><a href="buttons.html">Buttons</a></li>
@@ -382,7 +357,7 @@
                                     <li><a href="login.html">Login and Sign Up</a></li>
                                     <li><a href="404.html">Error 404</a></li>
                                 </ul>
-                            </li> -->
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -553,7 +528,7 @@
             <section id="content">
                 <div class="container">
                     <div class="block-header">
-                        <h2>Typography</h2>
+                        <h2>Form Examples</h2>
                     
                         <ul class="actions">
                             <li>
@@ -584,405 +559,176 @@
                                 </ul>
                             </li>
                         </ul>
-                    
                     </div>
                 
                     <div class="card">
                         <div class="card-header">
-                            <h2>Body Copy</h2>
-                    
-                            <ul class="actions">
-                                <li class="dropdown action-show">
-                                    <a href="" data-toggle="dropdown">
-                                        <i class="md md-more-vert"></i>
-                                    </a>
-                    
-                                    <div class="dropdown-menu pull-right">
-                                        <p class="p-20">
-                                            You can put anything here
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
+                            <h2>Basic Example <small>Individual form controls automatically receive some global styling. All textual 'input', 'textarea', and 'select' elements with .form-control are set to width: 100%; by default. Wrap labels and controls in .form-group for optimum spacing.
+</small></h2>
                         </div>
-                    
+                        
                         <div class="card-body card-padding">
-                            <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
-                            <p>Pellentesque lacinia sagittis libero et feugiat. Etiam volutpat adipiscing tortor non luctus. Vivamus venenatis vitae metus et aliquet. Praesent vitae justo purus. In hendrerit lorem nisl, ac lacinia urna aliquet non. Quisque nisi tellus, rhoncus quis est sit amet, lacinia euismod nunc. Aenean nec nibh velit. Fusce quis ante in nisl molestie fringilla. Nunc vitae ante id magna feugiat condimentum. Maecenas sit amet urna massa.</p>
-                            <p>Integer eu lectus sollicitudin, hendrerit est ac, sollicitudin nisl. Quisque viverra sodales lectus nec ultrices. Fusce elit dolor, dignissim a nunc id, varius suscipit turpis. Cras porttitor turpis vitae leo accumsan molestie. Morbi vitae luctus leo. Sed nec scelerisque magna, et adipiscing est. Proin lobortis lectus eu sem ullamcorper, commodo malesuada quam fringilla. Curabitur ac nunc dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sagittis enim eu est lacinia, ut egestas ligula imperdiet.</p>
+                            <form role="form">
+                                <div class="form-group fg-line">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control input-sm" id="exampleInputEmail1" placeholder="Enter email">
+                                </div>
+                                <div class="form-group fg-line">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control input-sm" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        <i class="input-helper"></i>
+                                        Don't forget to check me out
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-sm m-t-10">Submit</button>
+                            </form>
                         </div>
                     </div>
-                
+                    
                     <div class="card">
                         <div class="card-header">
-                            <h2>Headings</h2>
-                    
-                            <ul class="actions">
-                                <li class="dropdown action-show">
-                                    <a href="" data-toggle="dropdown">
-                                        <i class="md md-more-vert"></i>
-                                    </a>
-                    
-                                    <div class="dropdown-menu pull-right">
-                                        <p class="p-20">
-                                            You can put anything here
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
+                            <h2>Inline Form <small>Add '.form-inline' to your 'form' for left-aligned and inline-block controls. This only applies to forms within viewports that are at least 768px wide.</small></h2>
                         </div>
-                    
+                        
                         <div class="card-body card-padding">
-                            <h1>This is a Heading 1</h1>
-                            <p>Suspendisse vel quam malesuada, aliquet sem sit amet, fringilla elit. Morbi tempor tincidunt tempor. Etiam id turpis viverra, vulputate sapien nec, varius sem. Curabitur ullamcorper fringilla eleifend. In ut eros hendrerit est consequat posuere et at velit.</p>
-                    
-                            <div class="clearfix"></div>
-                    
-                            <h2>This is a Heading 2</h2>
-                            <p>In nec rhoncus eros. Vestibulum eu mattis nisl. Quisque viverra viverra magna nec pulvinar. Maecenas pellentesque porta augue, consectetur facilisis diam porttitor sed. Suspendisse tempor est sodales augue rutrum tincidunt. Quisque a malesuada purus.</p>
-                    
-                            <div class="clearfix"></div>
-                    
-                            <h3>This is a Heading 3</h3>
-                            <p>Vestibulum auctor tincidunt semper. Phasellus ut vulputate lacus. Suspendisse ultricies mi eros, sit amet tempor nulla varius sed. Proin nisl nisi, feugiat quis bibendum vitae, dapibus in tellus.</p>
-                    
-                            <div class="clearfix"></div>
-                    
-                            <h4>This is a Heading 4</h4>
-                            <p>Nulla et mattis nunc. Curabitur scelerisque commodo condimentum. Mauris blandit, velit a consectetur egestas, diam arcu fermentum justo, eget ultrices arcu eros vel erat.</p>
-                    
-                            <div class="clearfix"></div>
-                    
-                            <h5>This is a Heading 5</h5>
-                            <p>Quisque nec turpis at urna dictum luctus. Suspendisse convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac, commodo dapibus odio. Vivamus pretium nec odio cursus elementum. Suspendisse molestie ullamcorper ornare.</p>
-                    
-                            <div class="clearfix"></div>
-                    
-                            <h6>This is a Heading 6</h6>
-                            <p>Donec ultricies, lacus id tempor condimentum, orci leo faucibus sem, a molestie libero lectus ac justo. ultricies mi eros, sit amet tempor nulla varius sed. Proin nisl nisi, feugiat quis bibendum vitae, dapibus in tellus.</p>
+                            <form class="row" role="form">
+                                <div class="col-sm-3">
+                                    <div class="form-group fg-line">
+                                        <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                        <input type="email" class="form-control input-sm" id="exampleInputEmail2" placeholder="Enter email">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-3">
+                                    <div class="form-group fg-line">
+                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                        <input type="password" class="form-control input-sm" id="exampleInputPassword2" placeholder="Password">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="">
+                                            <i class="input-helper"></i>
+                                            Remember me
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-4">
+                                    <button type="submit" class="btn btn-primary btn-sm m-t-5">Sign in</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                
+                    
+                    <div class="card">
+                        
+                        <form class="form-horizontal" role="form">
+                            <div class="card-header">
+                                <h2>Horizontal Form <small>Use Bootstrap's predefined grid classes to align labels and groups of form controls in a horizontal layout by adding '.form-horizontal' to the form. Doing so changes '.form-groups' to behave as grid rows, so no need for '.row'.</small></h2>
+                            </div>
+                            
+                            <div class="card-body card-padding">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <div class="fg-line">
+                                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                    <div class="col-sm-10">
+                                        
+                                        <div class="fg-line">
+                                            <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                <i class="input-helper"></i>
+                                                Remember me
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary btn-sm">Sign in</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
                     <div class="card">
                         <div class="card-header">
-                            <h2>Inline text elements</h2>
-                    
-                            <ul class="actions">
-                                <li class="dropdown action-show">
-                                    <a href="" data-toggle="dropdown">
-                                        <i class="md md-more-vert"></i>
-                                    </a>
-                    
-                                    <div class="dropdown-menu pull-right">
-                                        <p class="p-20">
-                                            You can put anything here
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
+                            <h2>Multi Column <small>Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.</small></h2>
                         </div>
-                    
+                        
                         <div class="card-body card-padding">
                             <div class="row">
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Marked text</p>
-                                    <p>For highlighting a run of text due to its relevance in another context, use the 'mark' tag.</p>
-                                    <mark>This is marked text</mark>
-                                </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Deleted Text</p>
-                                    <p>For indicating blocks of text that have been deleted use the 'del' tag.</p>
-                                    <del>This is Deleted Text</del>
-                                </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Strikethrough text</p>
-                                    <p>For indicating blocks of text that are no longer relevant use the 's' tag.</p>
-                                    <s>This is Deleted Text</s>
-                                </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Inserted Text</p>
-                                    <p>For indicating additions to the document use the 'ins' tag.</p>
-                                    <ins>This is Inserted Text</ins>
-                                </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Underlined Text</p>
-                                    <p>To underline text use the 'u' tag.</p>
-                                    <u>This is Underlined Text</u>
-                                </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Small Text</p>
-                                    <p>For de-emphasizing inline or blocks of text, use the 'small' tag.</p>
-                                    <small>This is Small Text</small>
-                                </div>
-                    
-                                <div class="col-sm-4">
-                                    <p class="c-black">Bold Text</p>
-                                    <p>For emphasizing a snippet of text with a heavier font-weight.</p>
-                                    <strong>This is Bold Text</strong>
-                                </div>
-                    
-                                <div class="col-sm-4">
-                                    <p class="c-black">Underline Text</p>
-                                    <p>For emphasizing a snippet of text with italics.</p>
-                                    <em>This is Underline Text</em>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2>Helper Classes</h2>
-                    
-                                    <ul class="actions">
-                                        <li class="dropdown action-show">
-                                            <a href="" data-toggle="dropdown">
-                                                <i class="md md-more-vert"></i>
-                                            </a>
-                    
-                                            <div class="dropdown-menu pull-right">
-                                                <p class="p-20">
-                                                    You can put anything here
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                    
-                                <div class="card-body card-padding">
-                                    <p class="c-black">Alignment Classes</p>
-                                    <p>Easily realign text to components with text alignment classes.</p>
-                    
-                                    <p class="text-left">Left aligned text.</p>
-                                    <p class="text-center">Center aligned text.</p>
-                                    <p class="text-right">Right aligned text.</p>
-                                    <p class="text-justify">Justified text.</p>
-                                    <p class="text-nowrap">No wrap text.</p>
-                    
-                                    <p class="c-black m-t-25">Transformation classes</p>
-                                    <p>Transform text in components with text capitalization classes.</p>
-                    
-                                    <p class="text-lowercase">Lowercased text.</p>
-                                    <p class="text-uppercase">Uppercased text.</p>
-                                    <p class="text-capitalize">Capitalized text.</p>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="col-sm-6">
-                            <div class="card" style="min-height: 427px">
-                                <div class="card-header">
-                                    <h2>Abbreviations</h2>
-                    
-                                    <ul class="actions">
-                                        <li class="dropdown action-show">
-                                            <a href="" data-toggle="dropdown">
-                                                <i class="md md-more-vert"></i>
-                                            </a>
-                    
-                                            <div class="dropdown-menu pull-right">
-                                                <p class="p-20">
-                                                    You can put anything here
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                    
-                                <div class="card-body card-padding">
-                                    <p>Stylized implementation of HTML's 'abbr' element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a 'title' attribute have a light dotted bottom border and a help cursor on hover, providing additional context on hover and to users of assistive technologies.</p>
-                    
-                                    <p class="c-black m-t-20">Basic abbreviation</p>
-                                    <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
-                    
-                                    <p class="c-black m-t-20">Initialism</p>
-                                    <p>Add <abbr title="Initialism" class="initialism">Initialism</abbr> to an abbreviation for a slightly smaller font-size.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Blockquotes</h2>
-                    
-                            <ul class="actions">
-                                <li class="dropdown action-show">
-                                    <a href="" data-toggle="dropdown">
-                                        <i class="md md-more-vert"></i>
-                                    </a>
-                    
-                                    <div class="dropdown-menu pull-right">
-                                        <p class="p-20">
-                                            You can put anything here
-                                        </p>
+                                <div class="col-xs-3">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-3">
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                    
-                        <div class="card-body card-padding">
-                            <p class="m-b-25">For quoting blocks of content from another source within your document.</p>
-                    
-                            <blockquote class="m-b-25">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            </blockquote>
-                    
-                            <blockquote class="m-b-25">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                            </blockquote>
-                    
-                            <blockquote class="blockquote-reverse m-b-25">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>List</h2>
-                    
-                            <ul class="actions">
-                                <li class="dropdown action-show">
-                                    <a href="" data-toggle="dropdown">
-                                        <i class="md md-more-vert"></i>
-                                    </a>
-                    
-                                    <div class="dropdown-menu pull-right">
-                                        <p class="p-20">
-                                            You can put anything here
-                                        </p>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-3">
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                    
-                        <div class="card-body card-padding">
-                            <div class="row">
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Unordered</p>
-                    
-                                    <ul>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Consectetur adipiscing elit</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Facilisis in pretium nisl aliquet</li>
-                                        <li>Nulla volutpat aliquam velit
-                                            <ul>
-                                                <li>Phasellus iaculis neque</li>
-                                                <li>Purus sodales ultricies</li>
-                                                <li>Vestibulum laoreet porttitor sem</li>
-                                                <li>Ac tristique libero volutpat at</li>
-                                            </ul>
-                                        </li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Aenean sit amet erat nunc</li>
-                                        <li>Eget porttitor lorem</li>
-                                    </ul>
                                 </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Ordered</p>
-                    
-                                    <ol>
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Consectetur adipiscing elit</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Facilisis in pretium nisl aliquet</li>
-                                        <li>Nulla volutpat aliquam velit</li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Aenean sit amet erat nunc</li>
-                                        <li>Eget porttitor lorem</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Spretium nisl aliquet lorem ipsum</li>
-                                        <li>Linking best ttoth bellorem</li>
-                                    </ol>
+                                <div class="col-xs-3">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-3">
+                                    </div>
                                 </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Ordered - Roman</p>
-                    
-                                    <ol type="i">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Consectetur adipiscing elit</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Facilisis in pretium nisl aliquet</li>
-                                        <li>Nulla volutpat aliquam velit</li>
-                                        <li>Phasellus iaculis neque</li>
-                                        <li>Purus sodales ultricies</li>
-                                        <li>Vestibulum laoreet porttitor sem</li>
-                                        <li>Ac tristique libero volutpat at</li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Aenean sit amet erat nunc</li>
-                                        <li>Eget porttitor lorem</li>
-                                    </ol>
+                                <div class="col-xs-3">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-3">
+                                    </div>
                                 </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Custom - 1</p>
-                    
-                                    <ul class="clist clist-angle">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Consectetur adipiscing elit</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Facilisis in pretium nisl aliquet</li>
-                                        <li>Nulla volutpat aliquam velit</li>
-                                        <li>Phasellus iaculis neque</li>
-                                        <li>Purus sodales ultricies</li>
-                                        <li>Vestibulum laoreet porttitor sem</li>
-                                        <li>Ac tristique libero volutpat at</li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Aenean sit amet erat nunc</li>
-                                        <li>Eget porttitor lorem</li>
-                                    </ul>
+                                <div class="col-xs-4">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-4">
+                                    </div>
                                 </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Custom - 2</p>
-                    
-                                    <ul class="clist clist-check">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Consectetur adipiscing elit</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Facilisis in pretium nisl aliquet</li>
-                                        <li>Nulla volutpat aliquam velit</li>
-                                        <li>Phasellus iaculis neque</li>
-                                        <li>Purus sodales ultricies</li>
-                                        <li>Vestibulum laoreet porttitor sem</li>
-                                        <li>Ac tristique libero volutpat at</li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Aenean sit amet erat nunc</li>
-                                        <li>Eget porttitor lorem</li>
-                                    </ul>
+                                <div class="col-xs-4">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-4">
+                                    </div>
                                 </div>
-                    
-                                <div class="col-sm-4 m-b-25">
-                                    <p class="c-black">Custom - 3</p>
-                    
-                                    <ul class="clist clist-star">
-                                        <li>Lorem ipsum dolor sit amet</li>
-                                        <li>Consectetur adipiscing elit</li>
-                                        <li>Integer molestie lorem at massa</li>
-                                        <li>Facilisis in pretium nisl aliquet</li>
-                                        <li>Nulla volutpat aliquam velit</li>
-                                        <li>Phasellus iaculis neque</li>
-                                        <li>Purus sodales ultricies</li>
-                                        <li>Vestibulum laoreet porttitor sem</li>
-                                        <li>Ac tristique libero volutpat at</li>
-                                        <li>Faucibus porta lacus fringilla vel</li>
-                                        <li>Aenean sit amet erat nunc</li>
-                                        <li>Eget porttitor lorem</li>
-                                    </ul>
+                                <div class="col-xs-4">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-4">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-6">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-6">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="fg-line form-group">
+                                        <input type="text" class="form-control input-sm" placeholder=".col-xs-12">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -990,61 +736,9 @@
                 </div>
             </section>
         </section>
-
-        <!-- Older IE warning message -->
-        <!--[if lt IE 9]>
-            <div class="ie-warning">
-                <h1 class="c-white">IE SUCKS!</h1>
-                <p>You are using an outdated version of Internet Explorer, upgrade to any of the following web browser <br/>in order to access the maximum functionality of this website. </p>
-                <ul class="iew-download">
-                    <li>
-                        <a href="http://www.google.com/chrome/">
-                            <img src="img/browsers/chrome.png" alt="">
-                            <div>Chrome</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.mozilla.org/en-US/firefox/new/">
-                            <img src="img/browsers/firefox.png" alt="">
-                            <div>Firefox</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.opera.com">
-                            <img src="img/browsers/opera.png" alt="">
-                            <div>Opera</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.apple.com/safari/">
-                            <img src="img/browsers/safari.png" alt="">
-                            <div>Safari</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                            <img src="img/browsers/ie.png" alt="">
-                            <div>IE (New)</div>
-                        </a>
-                    </li>
-                </ul>
-                <p>Upgrade your browser for a Safer and Faster web experience. <br/>Thank you for your patience...</p>
-            </div>   
-        <![endif]-->
-    
-    
-        <!-- Javascript Libraries -->
-        <script src="<?= base_url() ?>vendors/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="<?= base_url() ?>vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        
-        <script src="<?= base_url() ?>vendors/bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
-        <script src="<?= base_url() ?>vendors/bower_components/Waves/dist/waves.min.js"></script>
-        <script src="<?= base_url() ?>vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
-        <script src="<?= base_url() ?>vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
-        
-        <script src="<?= base_url() ?>js/functions.js"></script>
-        <script src="<?= base_url() ?>js/demo.js"></script>
+      
     
     
     </body>
+      <?php $this->load->view("admin_footer"); ?>
 </html>

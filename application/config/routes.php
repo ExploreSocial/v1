@@ -5,6 +5,8 @@ $route['login'] = 'welcome/login';
 $route['signup'] = 'welcome/signup';
 $route['dashboard'] = 'welcome/dashboard';
 $route['create/events'] = 'events/setup_events';
+$route['logout'] = 'welcome/logout';
+$route['create/giveaway'] = 'giveaway/setup_giveaway';
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING

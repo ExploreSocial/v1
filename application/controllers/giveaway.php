@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Giveaway extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,33 +25,33 @@ class Welcome extends CI_Controller {
         
         $this->load->helper('url');
         $this->load->library('session');
+        if(!$this->session->userdata('userid')){
+			header("Location: " . base_url()."login");
+		}
+       //  print_r($this->uri->segment_array());
+       // echo $this->uri->segment(1); die;
   
     }
 
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		// $this->load->view('setup_events');
 	}
-	public function login()
+	public function setup_giveaway()
 	{
-		$this->load->model('welcome_model','welcome');
+		// $this->load->model('welcome_model','login');
 		
-		if(isset($_POST['login_now'])){ 
-			if(empty($_POST['email']) || empty($_POST['pass'])){
-				echo 0;
-			}else{
-				$result = $this->welcome->user_login($_POST);
-
-				if(is_numeric($result) && $result > 0)
-				{
-					$this->session->set_userdata('userid',$result);
-				}
-				echo $result; die;
-			}
-		}else{ 
-			$data=array('action' => 'login');
-			$this->load->view('signup_login',$data);
-		}
+		// if(isset($_POST['login_now'])){ 
+		// 	if(empty($_POST['email']) || empty($_POST['pass'])){
+		// 		echo 0;
+		// 	}else{
+		// 		$result = $this->welcome->user_login($_POST);
+		// 		echo $result;
+		// 	}
+		// }else{
+		// 	$data=array('action' => 'login');
+			$this->load->view('giveaway_setup');
+		// }
 	}
 	public function signup()
 	{	
@@ -61,11 +61,6 @@ class Welcome extends CI_Controller {
 				echo 0;
 			}else{
 				$result = $this->welcome->user_signup($_POST);
-
-				if($result != "already_exist" && is_numeric($result) && $result > 0)
-				{
-					$this->session->set_userdata('userid',$result);
-				}
 				echo $result;
 			}
 		}else{
@@ -75,27 +70,10 @@ class Welcome extends CI_Controller {
 	}
 
 	public function dashboard(){
-
 		// $this->load->model('dash_model','dash');
 		// check if the user is logged in. If yes then redirected to the dashboard else back to login page!
-		
-		if(!$this->session->userdata('userid')){
-			header("Location: " . base_url()."login");
-		}
-		$data = array(
-			'userid' => $this->session->userdata('userid')
-			);
+		$data = array();
 		$this->load->view('dashboard',$data);
-	}
-
-	public function logout(){
-		// $this->load->model('dash_model','dash');
-		// check if the user is logged in. If yes then redirected to the dashboard else back to login page!
-		$this->session->unset_userdata('userid');
-		if(!$this->session->userdata('userid')){
-			header("Location: " . base_url());
-		}
-		
 	}
 
 	

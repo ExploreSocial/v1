@@ -14,7 +14,7 @@ $(document).ready(function(){
                             type: "POST",
                             url: "signup/",
                             data: signup_data,
-                            success: function(msg) {
+                            success: function(msg) { 
                                 if(msg == 0){
                                      $("#signup-errors").html("All fields are mandatory!");
                                      $("#signup-errors").removeClass("hide").addClass("show");
@@ -23,6 +23,7 @@ $(document).ready(function(){
                                       $("#signup-errors").removeClass("hide").addClass("show");
                                 }else{
                                     //redirect the user to dashboard
+                                    window.location.href = "dashboard"; 
                                 }
                             },
                             error: function(xhr, status) {
@@ -40,6 +41,7 @@ $(document).ready(function(){
 
         e.preventDefault();  
         var validate = $.when(validate_login());
+
         validate.done(function(data){
                 if(data){ 
                 return false;
@@ -50,12 +52,13 @@ $(document).ready(function(){
                             type: "POST",
                             url: "login/",
                             data: login_data,
-                            success: function(msg) {
-                                if(msg == 0){
+                            success: function(msg) { 
+                                if(msg == 0){ 
                                      $("#login-errors").html("All fields are mandatory!");
                                      $("#login-errors").removeClass("hide").addClass("show");
                                 }else{
                                     //redirect the user to dashboard
+                                     window.location.href = "dashboard"; 
                                 }
                             },
                             error: function(xhr, status) {
@@ -69,7 +72,7 @@ $(document).ready(function(){
     });
 });
 
-var validate_signup = function() { alert("singup");
+var validate_signup = function() { 
     var error=0;
     var error_report='';
     $("#signup-errors").html();

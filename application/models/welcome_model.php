@@ -16,7 +16,7 @@ class Welcome_model extends CI_Model {
 	        $signup_data = array(
 		        'name' => $this->db->escape_str($data['username']),
 		        'email' => $data['email'],
-		        'pass' => password_hash($data['pass'], PASSWORD_DEFAULT)
+		        'pass' => password_hash(trim($data['pass']), PASSWORD_DEFAULT)
 			);
 	        $query = $this->db->query("SELECT * FROM users where email='".$data['email']."';");
 	        if ($query->num_rows() > 0)
@@ -36,17 +36,26 @@ class Welcome_model extends CI_Model {
 
 	        $signup_data = array(
 		        'email' => $data['email'],
-		        'pass' => password_hash($data['pass'], PASSWORD_DEFAULT)
+		        'pass' => $data['pass']
 			);
-	        $sql = "SELECT * FROM users WHERE email = ? AND pass = ? ";
-			$query = $this->db->query($sql, array($signup_data['email'], $signup_data['pass']));
-
+	        $sql = "SELECT * FROM users WHERE email = ? "; 
+			$query = $this->db->query($sql, array($signup_data['email']));
+			
 	        if ($query->num_rows() > 0)
 			{
-        		$userid = $this->db->insert_id();
+				$row = $query->row_array();
+				$pass_verify = 0;
+				//print_r($row); echo "verify pass- ".$signup_data['pass']."----".password_verify("helloworld",$row['pass'])."----"; die;
+				$pass_verify = password_verify(trim($data['pass']),$row["pass"]);
+				if($pass_verify){
+        		$userid = $row['user_id'];
                 return $userid;
+            	}else{
+            		return "pass_issue";
+            	}
         	}else{
         		return 0;
         	}
 
     }
+}

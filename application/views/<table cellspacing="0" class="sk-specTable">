@@ -1,0 +1,103 @@
+<table cellspacing="0" class="sk-specTable">
+              <tbody>
+<tr>
+                <th class="sk-groupHead" colspan="2">SPECIFICATIONS:</th>
+ </tr>
+              
+  <tr>
+                    <td class="sk-specsKey">Brand</td>
+                  <td class="sk-specsValue">Realtime</td>
+ </tr>
+              
+ <tr>
+                    <td class="sk-specsKey">Type</td>
+                  <td class="sk-specsValue">Access Control </td>
+ </tr>
+
+<tr>
+                    <td class="sk-specsKey"> LCD Screen</td>
+                  <td class="sk-specsValue"> 2.4 inch TFT (320 x 240) Color Screen</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey">CPU</td>
+                  <td class="sk-specsValue"> Up to 200MHZ CPU CLK and 100MHZ System Operating Frequency
+Makes Faster Recognition Speed</td>
+</tr>
+
+<tr>
+                    <td class="sk-specsKey">Fingerprint Sensor Resolution</td>
+                  <td class="sk-specsValue"> 500DPI</td>
+</tr>
+
+<tr>
+                    <td class="sk-specsKey">User Capacity</td>
+                  <td class="sk-specsValue"> 800</td>
+
+</tr>
+<tr>
+                    <td class="sk-specsKey">Log Capacity</td>
+                  <td class="sk-specsValue"> 50,000 Events (Can Add up to 100,000 Events)</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey">Protocol </td>
+                  <td class="sk-specsValue"> Communication TCP / IP, RS485</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey">USB Flash Drive</td>
+                  <td class="sk-specsValue"> >Upload/Download Available</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey">Authentication Method</td>
+                  <td class="sk-specsValue"> Fingerprint / ID Card</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey">Card</td>
+                  <td class="sk-specsValue">Proximity Card RFID Card (125Khz, EM4100)</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey">Identification Time</td>
+                  <td class="sk-specsValue">≤0.8s</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey"> FRR</td>
+                  <td class="sk-specsValue"> ≤0.1%</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey">FAR</td>
+                  <td class="sk-specsValue">≤0.0001%</td>
+</tr>
+ 
+<tr>
+                    <td class="sk-specsKey"> Operating Mode</td>
+                  <td class="sk-specsValue"> Offline / Online</td>
+</tr>
+ 
+<tr>
+                    <td class="sk-specsKey"> Authentication Mode</td>
+                  <td class="sk-specsValue">1: 1, 1: N</td>
+</tr>
+ 
+<tr>
+                    <td class="sk-specsKey">Voice</td>
+                  <td class="sk-specsValue">English</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey">Capacity</td>
+                  <td class="sk-specsValue"> Notification Alarm When Log Capacity is Full</td>
+</tr>
+ 
+<tr>
+                    <td class="sk-specsKey"> Power</td>
+                  <td class="sk-specsValue"> DC 12V/1A 0 0</td>
+</tr>
+ 
+<tr>
+                    <td class="sk-specsKey">Operating environment</td>
+                  <td class="sk-specsValue"> Operating Temp: 0 C-50 C, Humidity: 20%-80%</td>
+</tr>
+<tr>
+                    <td class="sk-specsKey">Size of the Terminal</td>
+                  <td class="sk-specsValue">103(L) x 103(W) x 31(H)mmt</td>
+</tr>
+ 
+            </tbody></table>
